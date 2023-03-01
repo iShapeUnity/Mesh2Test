@@ -43,6 +43,14 @@ namespace Test {
             mesh.AddAndDispose(starMesh, Color.yellow);
             
             
+            var circleShape = MeshGenerator.Circle(new float2(6, 0), 1.0f,16, 0, Allocator.Temp);
+            mesh.AddAndDispose(circleShape, Color.white);
+            
+            
+            var rectShape = MeshGenerator.Rect(new float2(-6, 0), new float2(2, 2),0, Allocator.Temp);
+            mesh.AddAndDispose(rectShape, Color.white);
+            
+            
             var meshFilter = this.GetComponent<MeshFilter>();
             
             meshFilter.mesh = mesh.Convert();
