@@ -10,7 +10,7 @@ Shader "Unlit/PlainColor" {
 
 		ZWrite Off
 		Blend SrcAlpha OneMinusSrcAlpha
-		Cull Off
+		Cull Back
 		ZTest Off
         
         Pass {

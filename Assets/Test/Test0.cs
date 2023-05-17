@@ -25,13 +25,13 @@ namespace Test {
             path.Add(new Vector2(4, -3));
             path.Add(new Vector2(4, 3));
 
-            var floatArray = path.ConvertToFloat(Allocator.Temp);
+            var floatArray = path.AsArray().Reinterpret<float2>();
             
             var pathMesh = MeshGenerator.StrokeByPath(floatArray, false, pathStyle, 0, Allocator.Temp);
 
             mesh.AddAndDispose(pathMesh, Color.magenta);
             
-            floatArray.Dispose();
+            path.Dispose();
             
             // Generate a green stroke mesh for a rectangle
             var rectStyle = new StrokeStyle(0.2f);
@@ -49,11 +49,11 @@ namespace Test {
             mesh.AddAndDispose(starMesh, Color.yellow);
             
             // Generate a white circle mesh
-            var circleShape = MeshGenerator.Circle(new float2(6, 0), 1.0f,16, 0, Allocator.Temp);
+            var circleShape = MeshGenerator.FillCircle(new float2(6, 0), 1.0f,32, true, 0, Allocator.Temp);
             mesh.AddAndDispose(circleShape, Color.white);
             
             // Generate a white rectangle mesh
-            var rectShape = MeshGenerator.Rect(new float2(-6, 0), new float2(2, 2),0, Allocator.Temp);
+            var rectShape = MeshGenerator.FillRect(new float2(-6, 0), new float2(2, 2),0, Allocator.Temp);
             mesh.AddAndDispose(rectShape, Color.white);
             
             // Set the generated mesh as the MeshFilter's mesh

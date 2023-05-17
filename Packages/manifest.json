@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.ishape.mesh2d": "file:/Users/nailsharipov/Projects/Unity/iShape/Mesh2d",
-    "com.unity.ide.rider": "3.0.18",
+    "com.unity.ide.rider": "3.0.21",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.modules.ai": "1.0.0",
