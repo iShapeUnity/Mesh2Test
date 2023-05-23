@@ -27,6 +27,8 @@ namespace Test {
                 SceneManager.LoadScene("Test2"); 
             } else if (currentSceneName == "Test2") {
                 SceneManager.LoadScene("Test3");
+            } else if (currentSceneName == "Test3") {
+                SceneManager.LoadScene("Test4");
             } else {
                 SceneManager.LoadScene("Test0");
             }
